@@ -10,6 +10,7 @@ import RepoStat from '../../components/RepoStat';
 
 export default class Main extends Component {
   state = {
+    repositoryError: false,
     repositoryInput: '',
     repositories: [],
   };
@@ -26,20 +27,21 @@ export default class Main extends Component {
       this.setState({
         repositoryInput: '',
         repositories: [...repositories, repository],
+        repositoryError: false,
       });
     } catch (err) {
-      console.log(err);
+      this.setState({ repositoryError: true });
     }
   };
 
   render() {
-    const { repositories, repositoryInput } = this.state;
+    const { repositories, repositoryInput, repositoryError } = this.state;
 
     return (
       <Container>
         <img src={logo} alt="GitHub Compare" />
 
-        <Form onSubmit={this.handleAddRepository}>
+        <Form withError={repositoryError} onSubmit={this.handleAddRepository}>
           <input
             type="text"
             placeholder="usuário/repositório"
