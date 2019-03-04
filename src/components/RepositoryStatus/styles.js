@@ -58,4 +58,31 @@ export const Repository = styled.div`
       }
     }
   }
+
+  div.buttons-container {
+    padding: 5px 5px;
+    display: flex;
+    justify-content: space-around;
+    button {
+      padding: 5px 10px;
+      border: 0;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    button.update {
+      background: #63f5b8;
+
+      &:hover {
+        background: #52d89f;
+      }
+    }
+    button.delete {
+      background: #f00;
+
+      &:hover {
+        background: #c90000;
+      }
+    }
+  }
 `;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Container, Repository } from './styles';
 
-const RepoStat = ({ repositories }) => (
+const RepositoryStatus = ({ repositories, removeRepository, updateRepository }) => (
   <Container>
     {repositories.map(repository => (
       <Repository key={repository.id}>
@@ -35,12 +35,21 @@ const RepoStat = ({ repositories }) => (
             <small>last commit</small>
           </li>
         </ul>
+
+        <div className="buttons-container">
+          <button type="button" className="update" onClick={() => updateRepository(repository.id)}>
+            Update Data
+          </button>
+          <button type="button" className="delete" onClick={() => removeRepository(repository.id)}>
+            Delete Card
+          </button>
+        </div>
       </Repository>
     ))}
   </Container>
 );
 
-RepoStat.propTypes = {
+RepositoryStatus.propTypes = {
   repositories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
@@ -55,6 +64,8 @@ RepoStat.propTypes = {
       pushed_at: PropTypes.string,
     }),
   ).isRequired,
+  removeRepository: PropTypes.func.isRequired,
+  updateRepository: PropTypes.func.isRequired,
 };
 
-export default RepoStat;
+export default RepositoryStatus;

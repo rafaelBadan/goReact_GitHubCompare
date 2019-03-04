@@ -2,9 +2,11 @@
   "name": "github_compare",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rafaelBadan.github.io/",
   "dependencies": {
     "axios": "^0.18.0",
     "font-awesome": "^4.7.0",
+    "gh-pages": "^2.0.1",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
@@ -16,7 +18,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,6 +32,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "eslint": "^5.15.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
