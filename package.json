@@ -2,7 +2,7 @@
   "name": "github_compare",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rafaelbadan.github.io/",
+  "homepage": "https://rafaelBadan.github.io/",
   "dependencies": {
     "axios": "^0.18.0",
     "font-awesome": "^4.7.0",
